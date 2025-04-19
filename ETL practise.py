@@ -39,3 +39,15 @@ transformed_data = transform(data_frame=extracted_data)
 
 # Pass the transformed_data DataFrame to the load() function
 load(data_frame=transformed_data, file_name="number_of_firms.csv")
+
+import pandas as pd
+
+# Read the sales data into a DataFrame
+sales_data = pd.read_parquet("sales_data.parquet", engine="fastparquet")
+
+# Check the data type of the columns of the DataFrames
+print(sales_data.dtypes)
+
+# Print the shape of the DataFrame, as well as the head
+print(sales_data.shape)
+print(sales_data.head())
